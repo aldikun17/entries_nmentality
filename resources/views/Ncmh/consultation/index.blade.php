@@ -42,14 +42,38 @@
                     <!-- Age Column -->
                     <div class="col-md-4">
                         <div class="bg-body-tertiary p-3 rounded-3 h-100">
-                            <div class="text-secondary small mb-1" style="font-size: 0.75rem;">Date Of Consultation</div>
+                            <div class="text-secondary small mb-1" style="font-size: 0.75rem;">Age</div>
+                            <div class="fw-bold text-dark">
+                                {{ $consult->age }} years old
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- gender Column -->
+                    <div class="col-md-4">
+                        <div class="bg-body-tertiary p-3 rounded-3 h-100">
+                            <div class="text-secondary small mb-1" style="font-size: 0.75rem;">Gender</div>
+                            <div class="fw-bold text-dark">
+                                {{ $consult->gender }}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- date of consult Column -->
+                    <div class="col-md-4">
+                        <div class="bg-body-tertiary p-3 rounded-3 h-100">
+                            <div class="text-secondary small mb-1" style="font-size: 0.75rem;">Date Of Consultation
+                            </div>
                             <div class="fw-bold text-dark">
                                 {{ date('m/d/Y', strtotime($consult->date_consultation)) }}
                             </div>
                         </div>
                     </div>
 
-                    <!-- Gender Column -->
+                    <!-- history past Column -->
                     <div class="col-md-4">
                         <div class="bg-body-tertiary p-3 rounded-3 h-100">
                             <div class="text-secondary small mb-1" style="font-size: 0.75rem;">History past</div>
@@ -59,12 +83,21 @@
                         </div>
                     </div>
 
-                    <!-- Status Column -->
+                    <!-- encounter date Column -->
                     <div class="col-md-4">
                         <div class="bg-body-tertiary p-3 rounded-3 h-100">
                             <div class="text-secondary small mb-1" style="font-size: 0.75rem;">Encounter Date</div>
                             <div class="fw-bold text-dark">
                                 {{ date('m/d/Y', strtotime($consult->encounter_date)) }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- remarks Column -->
+                    <div class="col-md-4">
+                        <div class="bg-body-tertiary p-3 rounded-3 h-100">
+                            <div class="text-secondary small mb-1" style="font-size: 0.75rem;">Remarks</div>
+                            <div class="fw-bold text-dark">
+                                {{ $consult->remarks }}
                             </div>
                         </div>
                     </div>

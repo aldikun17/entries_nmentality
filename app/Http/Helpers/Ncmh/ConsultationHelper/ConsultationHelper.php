@@ -48,8 +48,13 @@ class ConsultationHelper
             'ncmh_encounters.encounter_date',
             'user_names.name_id',
             'user_names.last_name',
-            'user_names.first_name'
-        )->join("ncmh_encounters", "ncmh_consultations.encounter_id", "ncmh_encounters.id")->join('user_names', 'ncmh_encounters.patient_id', 'user_names.name_id')
+            'user_names.first_name',
+            'user_infos.age',
+            'user_infos.gender'
+        )->join("ncmh_encounters", "ncmh_consultations.encounter_id", "ncmh_encounters.id")
+            ->join('user_names', 'ncmh_encounters.patient_id', 'user_names.name_id')
+            ->join('user_profiles', 'user_names.name_id', 'user_profiles.name_id')
+            ->join('user_infos', 'user_profiles.info_id', 'user_infos.info_id')
             ->when($search, function ($query, $search) {
                 $query->where('user_names.last_name', 'LIKE', "%{$search}%")->orWhere('user_names.first_name', 'LIKE', "%{$search}%");
             })
