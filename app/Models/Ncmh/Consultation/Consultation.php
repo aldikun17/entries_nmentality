@@ -2,15 +2,17 @@
 
 namespace App\Models\Ncmh\Consultation;
 
+use App\Models\Ncmh\Encounter\Encounter;
 use Illuminate\Database\Eloquent\Model;
 
-class Consultation extends Model{
+class Consultation extends Model
+{
 
     protected $table = 'ncmh_consultations';
 
     protected $fillable = [
 
-        'encounter_id ',
+        'encounter_id',
 
         'date_consultation',
 
@@ -26,7 +28,9 @@ class Consultation extends Model{
 
         'remarks'
 
-
     ];
-
+    public function encounter()
+    {
+        return $this->belongsTo(Encounter::class, "encounter_id", "id");
+    }
 }

@@ -2,9 +2,12 @@
 
 namespace App\Models\Ncmh\Encounter;
 
+use App\Models\Ncmh\Consultation\Consultation;
+use App\Models\User\UserProfile;
 use Illuminate\Database\Eloquent\Model;
 
-class Encounter extends Model{
+class Encounter extends Model
+{
 
     protected $table = 'ncmh_encounters';
 
@@ -22,4 +25,18 @@ class Encounter extends Model{
 
     ];
 
+    public function ScopeCheckEncounterExist($query, $encounter_id)
+    {
+        return $query->where("id", $encounter_id);
+    }
+
+    public function consultation()
+    {
+        return $this->hasOne(Consultation::class, "encounter_id", "id");
+    }
+
+    public function patient()
+    {
+        return $this->belongsTo(UserProfile::class, "patient_id", "name_id");
+    }
 }

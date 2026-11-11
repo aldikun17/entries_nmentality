@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('info_id')->constrained('user_profiles')->cascadeOnDelete();
             $table->date('dob');
-            $table->string('gender',10);
-            $table->string('civil_status',10);
+            $table->unsignedTinyInteger('age');
+            $table->string('gender', 10);
+            $table->string('civil_status', 10);
             $table->string('occupation')->nullable();
             $table->string('education')->nullable();
             $table->timestamps();

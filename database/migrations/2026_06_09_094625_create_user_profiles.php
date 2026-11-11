@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('info_id')->constrained('user_infos')->cascadeOnDelete();
             $table->foreignId('contact_id')->constrained('user_contacts')->cascadeOnDelete();
             $table->foreignId('address_id')->constrained('user_address')->cascadeOnDelete();
-            $table->foreignId('status_id_id')->constrained('patient_status')->cascadeOnDelete();
+            $table->foreignId('status_id')->constrained('patient_status')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

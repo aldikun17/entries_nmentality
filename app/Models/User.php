@@ -10,14 +10,13 @@ use Laravel\Passport\Contracts\OAuthenticatable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
-use Laravel\Passport\HasApiTokens;
 use App\Models\User\UserClientInformation;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
-class User extends Authenticatable implements OAuthenticatable
+class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable;
 
     protected $fillable = [
 
@@ -39,10 +38,10 @@ class User extends Authenticatable implements OAuthenticatable
 
     ];
 
-    public function client_information(){
+    public function client_information()
+    {
 
-        return $this->hasOne(UserClientInformation::class,'profile_id','id');
-
+        return $this->hasOne(UserClientInformation::class, 'profile_id', 'id');
     }
 
     protected function casts(): array
@@ -53,9 +52,9 @@ class User extends Authenticatable implements OAuthenticatable
         ];
     }
 
-    public function scopeValidateEmail($query , $email){
+    public function scopeValidateEmail($query, $email)
+    {
 
-        return $query->where('email',$email);
-
+        return $query->where('email', $email);
     }
 }

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('full_address');
             $table->timestamps();
         });
-    }
+    }    //address_id, psgc_region_id, psgc_prov_id, psgc_city_id, psgc_barangay_id, full_address
 
     /**
      * Reverse the migrations.

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('profile_id')->constrained('user_profiles')->cascadeOnDelete();
             $table->string('client_id');
             $table->string('plainSecret');
-            $table->string('state',40);
+            $table->string('state', 40);
             $table->string('authCode')->nullable();
             $table->string('callback');
             $table->text('redirect')->nullable();

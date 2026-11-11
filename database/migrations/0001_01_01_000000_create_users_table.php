@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role',20);
+            $table->string('role', 20)->default("user");
             $table->rememberToken();
             $table->timestamps();
         });
@@ -40,7 +40,7 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('role',32);
+            $table->string('role', 32);
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('mobile_number');
             $table->timestamps();
         });
-    }
+    }// contac_id, email_address, mobile_number
 
     /**
      * Reverse the migrations.

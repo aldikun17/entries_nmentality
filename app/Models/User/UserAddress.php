@@ -4,7 +4,8 @@ namespace App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserAddress extends Model{
+class UserAddress extends Model
+{
 
     protected $table = 'user_address';
 
@@ -20,11 +21,11 @@ class UserAddress extends Model{
 
         'psgc_barangay_id',
 
-        'house_no',
+        'full_address'
 
-        'street_no'
+        //'house_no',
 
+        //'street_no'
 
     ];
-
 }

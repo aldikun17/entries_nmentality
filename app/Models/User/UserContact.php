@@ -4,7 +4,8 @@ namespace App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserContact extends Model{
+class UserContact extends Model
+{
 
     protected $table = 'user_contacts';
 
@@ -14,14 +15,13 @@ class UserContact extends Model{
 
         'email_address',
 
-        'contact_number'
+        'mobile_number'
 
     ];
 
-    public function client_information(){
+    public function client_information()
+    {
 
-        return $this->hasOne(App\Models\User\UserClientInformation::class,'profile_id','id');
-
+        return $this->hasOne(App\Models\User\UserClientInformation::class, 'profile_id', 'id');
     }
-
 }

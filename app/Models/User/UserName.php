@@ -4,7 +4,8 @@ namespace App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserName extends Model{
+class UserName extends Model
+{
 
     protected $table = 'user_names';
 
@@ -23,5 +24,4 @@ class UserName extends Model{
         'title'
 
     ];
-
 }

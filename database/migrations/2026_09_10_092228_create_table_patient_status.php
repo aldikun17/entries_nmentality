@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('patient_status', function (Blueprint $table) {
             $table->id();
             $table->foreignId('status_id')->constrained('user_profiles')->cascadeOnDelete();
-            $table->string('patient_class',64);
+            $table->string('patient_class', 64);
             $table->timestamps();
         });
     }
